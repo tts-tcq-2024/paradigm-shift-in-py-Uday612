@@ -5,12 +5,14 @@ def battery_is_ok(temperature, soc, charge_rate):
     soc_ok = (soc < 20 or soc > 80)
     charge_ok = (charge_rate > 0.8)
     battery_ok = temp_ok + soc_ok + charge_ok
+    print(battery_ok)
+    
     if battery_ok >= 1:
         print('Battery is Not okay!')
         return False
-    else:
-        print("Battery is okay!")
-        return True
+        
+    print('Battery is okay!')
+    return True
 
 if __name__ == '__main__':
   assert(battery_is_ok(25, 70, 0.7) is True)

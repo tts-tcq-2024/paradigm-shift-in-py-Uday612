@@ -1,9 +1,11 @@
 
 def battery_is_ok(temperature, soc, charge_rate):
-    battery_ok = False
-    battery_ok = (temperature < 0 or temperature > 45) or (soc < 20 or soc > 80) or (charge_rate > 0.8)
-    print(battery_ok)
-    if battery_ok == True:
+    battery_ok = 0
+    temp_ok = (temperature < 0 or temperature > 45)
+    soc_ok = (soc < 20 or soc > 80)
+    charge_ok = (charge_rate > 0.8)
+    battery_ok = temp_ok + soc_ok + charge_ok
+    if battery_ok >= 1:
         print('Battery is Not okay!')
         return False
     else:

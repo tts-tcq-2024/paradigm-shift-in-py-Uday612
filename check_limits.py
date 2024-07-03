@@ -1,17 +1,20 @@
-
+def compare(value, lowerBound, upperBound):
+    return (value < lowerBound or value > upperBound);
+    
 def battery_is_ok(temperature, soc, charge_rate):
-  if temperature < 0 or temperature > 45:
-    print('Temperature is out of range!')
-    return False
-  elif soc < 20 or soc > 80:
-    print('State of Charge is out of range!')
-    return False
-  elif charge_rate > 0.8:
-    print('Charge rate is out of range!')
-    return False
-
-  return True
-
+    battery_ok = 0
+    temp_ok = compare(temperature, 0, 45)
+    soc_ok = compare(soc, 20, 80)
+    charge_ok = (charge_rate > 0.8)
+    battery_ok = temp_ok + soc_ok + charge_ok
+    print(battery_ok)
+    
+    if battery_ok >= 1:
+        print('Battery is Not okay!')
+        return False
+    else:
+        print("Battery is okay!")
+        return True
 
 if __name__ == '__main__':
   assert(battery_is_ok(25, 70, 0.7) is True)

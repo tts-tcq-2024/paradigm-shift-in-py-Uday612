@@ -20,3 +20,6 @@ class TestLanguagesSupported(unittest.TestCase):
     self.assertEqual(get_message("german","temperature"),"Die Temperatur liegt außerhalb des zulässigen Bereichs")
     self.assertEqual(get_message("german","soc"),"Der SOC liegt außerhalb des zulässigen Bereichs")
     self.assertEqual(get_message("german","charge"),"Die Ladung liegt außerhalb der Reichweite")
+
+if __name__ == '__main__':
+    unittest.main()

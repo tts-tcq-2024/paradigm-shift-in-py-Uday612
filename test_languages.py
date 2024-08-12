@@ -6,6 +6,9 @@ class TestLanguagesSupported(unittest.TestCase):
   def test_set_preferred_language(self):
     set_preferred_language("english")
     self.assertEqual(set_preferred_language,"english")
+
+    set_preferred_language("german")
+    self.assertEqual(set_preferred_language,"english")
     
 
   def test_english(self):

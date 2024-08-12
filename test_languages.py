@@ -1,7 +1,12 @@
 import unittest
-from languages import get_message
+from languages import get_message, preferred_language, set_preferred_language
 
 class TestLanguagesSupported(unittest.TestCase):
+
+  def test_set_preferred_language(self):
+    set_preferred_language("english")
+    self.assertEqual(set_preferred_language,"english")
+    
 
   def test_english(self):
     self.assertEqual(get_message("english","temperature"),"Temperature is out of range")
